@@ -12,6 +12,8 @@ import csv
 #datetimeのインポート
 import datetime
 
+#import pandas as pd
+
 # Google Chromeを起動
 driver = webdriver.Chrome()
 
@@ -58,19 +60,7 @@ for entry in entries:
 print(today_list)
 
 #結果をCSVファイルに書き出し。ファイル名は現在時刻
-with open('_NewsTopics.csv', 'w')as file:
+with open('C:\\Users\\lotus\\OneDrive\\デスクトップ\\202402\\Output.csv', 'w')as file:
     writer=csv.writer(file,lineterminator='\n')
     writer.writerows(today_list)
-#soup = BeautifulSoup(res.text, "html.parser")
-#import re
 
-#elems = soup.find_all(href=re.compile("news.yahoo.co.jp/pickup"))
-#elems
-
-#for elem in elems:
-#    print(elem.contents[0])
-#    print(elem.attrs['href'])
-
-#10秒待って閉じる
-time.sleep(10)
-driver.close()
